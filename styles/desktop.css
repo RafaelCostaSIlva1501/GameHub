@@ -1,0 +1,58 @@
+@media (min-width: 850px) {
+  main {
+    padding: 40px;
+  }
+
+  header .menu-button {
+    display: none;
+  }
+
+  header nav {
+    all: unset;
+
+    display: flex;
+    flex-direction: row;
+
+    flex: 1;
+
+    width: fit-content;
+  }
+
+  header nav button {
+    display: none;
+  }
+
+  header nav a {
+    text-decoration: none;
+  }
+
+  header nav a:hover {
+    background: none;
+
+    color: var(--cor7);
+    text-decoration: underline;
+  }
+
+  main section {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10px;
+  }
+
+  main section .home-text h1 {
+    font-size: 5rem;
+  }
+
+  main section .home-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+
+  main section img {
+    display: block;
+    width: 45%;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+}

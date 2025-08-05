@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --cor1: #0d0d0d;
+  --cor2: #032ca6;
+  --cor3: #0433bf;
+  --cor4: #795ed8;
+  --cor5: #9c7af3;
+  --cor6: #d6bbf2;
+  --cor7: #fbf5ff;
+}
+
+/* Scrollbar para navegadores WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cor2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cor7);
+  border: 2px solid var(--cor2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cor6);
+}
+
+a {
+  text-decoration: none;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+button {
+  display: flex;
+
+  width: fit-content;
+  height: fit-content;
+
+  border: none;
+  background: none;
+
+  cursor: pointer;
+}
+
+svg {
+  display: flex;
+
+  width: fit-content;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+}
