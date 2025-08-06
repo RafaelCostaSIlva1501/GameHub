@@ -1,58 +1,122 @@
 @media (min-width: 850px) {
-  main {
-    padding: 40px;
+  #home {
+    padding: 40px 80px;
   }
 
-  header .menu-button {
+  .header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 0px 40px;
+
+    background: #0000008a;
+
+    z-index: 100;
+
+    animation: expandHeader 0.2s ease-out forwards;
+  }
+
+  @keyframes expandHeader {
+    from {
+      height: 0;
+      padding: 0px 80px;
+    }
+    to {
+      height: fit-content;
+      padding: 40px 80px;
+    }
+  }
+
+  #home .header-logo {
+    font-size: 2rem;
+  }
+
+  #home .header-logo img {
+    width: 40px;
+  }
+
+  #home .menu-button {
     display: none;
   }
 
-  header nav {
+  #home .menu {
     all: unset;
 
     display: flex;
     flex-direction: row;
+    justify-content: center;
 
     flex: 1;
 
     width: fit-content;
   }
 
-  header nav button {
+  #home .menu button {
     display: none;
   }
 
-  header nav a {
+  #home .menu a {
     text-decoration: none;
   }
 
-  header nav a:hover {
+  #home .menu a:hover {
     background: none;
 
     color: var(--cor7);
     text-decoration: underline;
   }
 
-  main section {
+  #home section {
     flex-direction: row-reverse;
     align-items: center;
     gap: 10px;
   }
 
-  main section .home-text h1 {
+  #home .home-text {
+    justify-content: center;
+    flex: 1;
+  }
+
+  #home .home-text h1 {
     font-size: 5rem;
   }
 
-  main section .home-text p {
+  #home .home-text p {
     font-size: 1.2rem;
     line-height: 1.8;
   }
 
-  main section img {
-    display: block;
-    width: 45%;
-    height: auto;
-    object-fit: contain;
-    flex-shrink: 0;
+  #home a {
+    align-self: flex-start;
+  }
+
+  #home .home-img {
+    display: flex;
+    flex: 1;
+  }
+
+  #home .home-img img {
+    display: flex;
+    width: 80%;
+  }
+
+  #games {
+    display: flex;
+    gap: 40px;
+
+    padding: 40px 80px;
+  }
+
+  #about {
+    display: flex;
+    gap: 40px;
+    
+    padding: 40px 80px;
   }
 }

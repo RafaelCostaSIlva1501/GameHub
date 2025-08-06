@@ -1,4 +1,4 @@
-.main {
+#home {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,7 +14,7 @@
   background-size: cover;
 }
 
-.main .header {
+#home header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,35 +29,49 @@
   justify-content: space-between;
 
   width: 100%;
-  padding: 20px 40px;
+
+  padding: 0px 20px;
 
   background: #0000008a;
 
   z-index: 100;
+
+  animation: expandHeader 0.2s ease-out forwards;
 }
 
-.header div {
-  display: flex;
-  gap: 5px;
-  flex: 1;
+@keyframes expandHeader {
+  from {
+    height: 0;
+    padding: 0px 20px;
+  }
+  to {
+    height: fit-content;
+    padding: 20px 20px;
+  }
 }
 
-.header-logo {
+#home .header-logo {
   display: flex;
   align-items: center;
+  gap: 5px;
+  flex: 1;
 
   font-weight: 600;
 }
 
-.header-logo p {
+#home .header-logo img {
+  width: 30px;
+}
+
+#home .header-logo p {
   color: var(--cor7);
 }
 
-.header-logo span {
+#home .header-logo span {
   color: var(--cor5);
 }
 
-.header nav {
+#home .menu {
   position: fixed;
   top: 0;
   right: 0;
@@ -77,13 +91,13 @@
   z-index: 100;
 }
 
-.header nav button {
+#home .menu button {
   margin-left: auto;
 
   color: var(--cor7);
 }
 
-.header nav a {
+#home .menu a {
   width: min-content;
   padding: 5px 7px;
 
@@ -95,43 +109,46 @@
   transition: all 0.3s;
 }
 
-.header nav a:hover {
+#home .menu a:hover {
   background-color: var(--cor7);
   color: var(--cor2);
 }
 
-.header-buttons {
+#home .header-buttons {
+  display: flex;
   justify-content: end;
+  gap: 5px;
+  flex: 1;
 }
 
-#home {
+#home section {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
 }
 
-#home img {
+#home .home-img img {
   display: block;
   width: 350px;
   margin: 0 auto;
 }
 
-.home-text {
+#home .home-text {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.home-text h1 {
+#home .home-text h1 {
   font-size: 2rem;
 }
 
-.home-text h1 span {
+#home .home-text h1 span {
   color: var(--cor5);
 }
 
-.home-text a {
+#home .home-text a {
   position: relative;
   display: inline-block;
   overflow: hidden;
@@ -150,13 +167,13 @@
   z-index: 1;
 }
 
-.home-text a:hover {
+#home .home-text a:hover {
   transform: translate(5px, -5px);
   box-shadow: -2px 2px 1px 1px var(--cor7);
 }
 
 /* Fundo animado */
-.home-text a::before {
+#home .home-text a::before {
   content: "";
   position: absolute;
   top: 0;
