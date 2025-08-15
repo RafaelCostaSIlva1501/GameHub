@@ -9,11 +9,35 @@
   --cor1: #0d0d0d;
   --cor2: #032ca6;
   --cor3: #0433bf;
-  --cor4: #795ed8;
-  --cor5: #9c7af3;
-  --cor6: #d6bbf2;
-  --cor7: #fbf5ff;
+  --cor4: #413cbc;
+  --cor5: #795ed8;
+  --cor6: #9c7af3;
+  --cor7: #dacce9;
+  --cor8: #fbf5ff;
+  --fontColor: #a0a7c0;
+  --fontColor1: #a0a7c0;
 }
+
+/*
+  Escala para padding, margin e gap e pode usar o border radius também
+
+  4px
+  8px
+  12px
+  16px
+  24px
+  32px
+  48px
+  64px
+  96px
+  128px
+  192px
+  256px
+  384px
+  512px
+  640px
+  768px
+*/
 
 /* Scrollbar para navegadores WebKit (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
@@ -25,12 +49,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--cor7);
+  background: var(--cor8);
   border: 2px solid var(--cor2);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--cor6);
+  background: var(--cor7);
 }
 
 a {

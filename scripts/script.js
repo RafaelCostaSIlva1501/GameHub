@@ -45,6 +45,8 @@ games.forEach((e, i) => {
   article.addEventListener("click", () => {
     DOM.modal.style.display = "flex";
     contentModal(i);
+    DOM.header.classList.remove("header-fixed");
+    document.body.style.overflow = "hidden";
   });
 
   const span = createElement("span");
@@ -56,6 +58,7 @@ games.forEach((e, i) => {
 
 DOM.btnCloseModal.addEventListener("click", () => {
   DOM.modal.style.display = "none";
+  document.body.style.overflow = "";
 });
 
 const contentModal = (path) => {
@@ -63,7 +66,7 @@ const contentModal = (path) => {
 
   DOM.btnModalPlay.href = games[path].link;
 
-  DOM
+  DOM;
 };
 
 DOM.btnModalSection.forEach((button, i) => {

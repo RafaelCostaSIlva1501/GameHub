@@ -5,9 +5,9 @@
   flex: 1;
 
   min-height: 100vh;
-  padding: 20px;
+  padding: 24px;
 
-  color: var(--cor7);
+  color: var(--cor8);
 
   background-image: url(../img/background.jpg);
   background-position: center;
@@ -30,7 +30,7 @@
 
   width: 100%;
 
-  padding: 0px 20px;
+  padding: 0px 24px;
 
   background: #0000008a;
 
@@ -42,33 +42,33 @@
 @keyframes expandHeader {
   from {
     height: 0;
-    padding: 0px 20px;
+    padding: 0px 24px;
   }
   to {
     height: fit-content;
-    padding: 20px 20px;
+    padding: 24px 24px;
   }
 }
 
 #home .header-logo {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   flex: 1;
 
   font-weight: 600;
 }
 
 #home .header-logo img {
-  width: 30px;
+  width: 32px;
 }
 
 #home .header-logo p {
-  color: var(--cor7);
+  color: var(--cor8);
 }
 
 #home .header-logo span {
-  color: var(--cor5);
+  color: var(--cor6);
 }
 
 #home .menu {
@@ -78,11 +78,11 @@
 
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 
   width: 0;
   height: 100%;
-  padding: 20px 0px;
+  padding: 24px 0px;
 
   background-color: var(--cor2);
 
@@ -94,31 +94,39 @@
 #home .menu button {
   margin-left: auto;
 
-  color: var(--cor7);
+  color: var(--cor8);
 }
 
 #home .menu a {
   width: min-content;
-  padding: 5px 7px;
+  padding: 4px 8px;
 
-  border-radius: 5px;
+  border-radius: 4px;
 
-  color: #f5f5f5;
+  color: var(--cor8);
   font-size: 18px;
 
   transition: all 0.3s;
 }
 
 #home .menu a:hover {
-  background-color: var(--cor7);
+  background-color: var(--cor8);
   color: var(--cor2);
 }
 
 #home .header-buttons {
   display: flex;
   justify-content: end;
-  gap: 5px;
   flex: 1;
+  gap: 4px;
+}
+
+#home .header-buttons button {
+  transition: all 0.3s;
+}
+
+#home .header-buttons button:hover {
+  transform: scale(1.05);
 }
 
 #home section {
@@ -130,106 +138,70 @@
 
 #home .home-img img {
   display: block;
-  width: 350px;
+  width: 384px;
   margin: 0 auto;
 }
 
 #home .home-text {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 #home .home-text h1 {
   font-size: 2rem;
 }
 
-#home .home-text h1 span {
-  color: var(--cor5);
+#home .home-text p {
+  color: var(--cor7);
+  line-height: 24px;
 }
 
 #home .home-text a {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-
   width: fit-content;
-  padding: 7px;
+  padding: 8px;
 
-  border: 2px solid var(--cor5);
-  border-radius: 5px;
+  background-color: var(--cor6);
+  border-radius: 4px;
 
-  color: var(--cor5);
+  color: var(--cor8);
   font-weight: 600;
   text-decoration: none;
 
   transition: all 0.3s ease;
-  z-index: 1;
 }
 
 #home .home-text a:hover {
-  transform: translate(5px, -5px);
-  box-shadow: -2px 2px 1px 1px var(--cor7);
-}
-
-/* Fundo animado */
-#home .home-text a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-
-  background-color: var(--cor5);
-  z-index: 0; /* atrás do texto */
-
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-}
-
-/* Faz o fundo aparecer */
-.home-text a:hover::before {
-  transform: translateX(0);
-}
-
-/* Mantém o texto visível por cima */
-.home-text a span {
-  position: relative;
-  z-index: 1;
-  transition: color 0.3s ease;
-}
-
-/* Muda a cor do texto quando o fundo aparece */
-.home-text a:hover span {
-  color: var(--cor7);
+  transform: scale(1.05);
 }
 
 #games {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
 
-  padding: 40px 20px;
+  padding: 48px 24px;
 
   background-color: var(--cor2);
 
-  color: var(--cor7);
+  color: var(--cor8);
 }
 
 #games h2 {
-  font-size: 2rem;
-  text-shadow: 3px 3px var(--cor5);
+  font-size: 32px;
+  letter-spacing: 4px;
+  text-shadow: 3px 3px var(--cor6);
 }
 
 #games .container-games {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
+  justify-content: space-between;
+  gap: 32px;
 
-  width: fit-content;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -238,10 +210,10 @@
   justify-content: center;
   align-items: center;
 
-  width: 170px;
-  height: 250px;
+  width: 200px;
+  height: 300px;
 
-  border-radius: 10px;
+  border-radius: 8px;
 
   background-position: center;
   background-size: 100%;
@@ -254,11 +226,11 @@
 #games .container-games article span {
   display: none;
 
-  padding: 5px 10px;
+  padding: 4px 12px;
 
   background-color: #00000059;
-  border-radius: 5px;
-  color: var(--cor7);
+  border-radius: 4px;
+  color: var(--cor8);
 }
 
 #games .container-games article:hover {
@@ -272,43 +244,70 @@
 
 #about {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 20px;
 
-  min-height: 100vh;
-  padding: 20px;
+  padding: 24px;
 
   background: linear-gradient(to bottom, var(--cor2), var(--cor3), var(--cor4));
   background-image: url(../img/background-invert.jpg);
 
   background-repeat: no-repeat;
 
-  color: var(--cor6);
+  color: var(--cor7);
 }
 
-#about img {
-  width: 150px;
+#about article {
+  display: flex;
+  flex-direction: column;
 
-  margin: 0 auto;
+  padding: 24px;
+
+  background-color: var(--cor4);
+  border-radius: 8px;
+  box-shadow: 5px 5px 1px 1px #00000046;
 }
 
-#about h2 {
-  margin-bottom: 1.5rem;
+#about .about-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 0px;
+}
+
+#about .about-title img {
+  width: 32px;
+}
+
+#about .about-title h2 {
+  height: fit-content;
+  margin-top: auto;
+
+  color: var(--cor8);
+  font-size: 32px;
+  letter-spacing: 4px;
+  text-shadow: 3px 3px var(--cor6);
+}
+
+#about .about-text {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  padding: 0px 8px;
+  margin-left: 12px;
+
+  border-left: 2px solid var(--cor7);
 
   color: var(--cor7);
-  font-size: 2rem;
-
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-shadow: 3px 3px var(--cor5);
 }
 
-#about p {
-  color: var(--cor7);
-  text-align: center;
-  line-height: 1.7;
-  font-size: 1.1rem;
+#about .about-text p {
+  color: var(--cor8);
+  font-size: 16px;
+  line-height: 24px;
 }
 
 #modal {
@@ -321,82 +320,92 @@
   flex-direction: column;
 
   width: 80%;
-  max-width: 600px;
+  max-width: 640px;
   height: 80%;
-  max-height: 600px;
+  max-height: 758px;
 
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
 
   background-color: #1e1e2f;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 
-  color: var(--cor7);
+  color: var(--cor8);
 
   z-index: 10;
 }
 
-#modal > header {
-  flex: 1;
+#modal .modal-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  padding: 20px;
+  height: 60%;
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-#modal .modal-header button {
+#modal .modal-header .close-modal-button {
+  align-self: flex-end;
+
+  margin: 24px;
   margin-left: auto;
+  padding: 4px;
+
+  background-color: #0000001a;
+  border-radius: 50%;
+
+  transition: all 0.3s;
 }
 
-#modal main {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-
-  flex: 1;
-  padding: 20px;
+#modal .modal-header .close-modal-button:hover {
+  background-color: #ffffff1a;
 }
 
-#modal nav {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-#modal a {
+#modal .modal-header nav {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+
+  padding: 16px 24px;
+
+  background-color: #0000004b;
+  backdrop-filter: blur(2px);
+}
+
+#modal .modal-header a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
   width: fit-content;
-  padding: 10px 20px;
+  padding: 8px 16px;
 
-  background: linear-gradient(to right, var(--cor5), var(--cor4));
-  box-shadow: 0 4px 10px #0000004d;
-  border-radius: 8px;
+  background: linear-gradient(to right, var(--cor6), var(--cor5));
+  box-shadow: 0 4px 12px #0000004d;
+  border-radius: 4px;
 
-  color: var(--cor7);
+  color: var(--cor8);
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 16px;
   text-decoration: none;
 
   transition: all 0.3s ease;
 }
 
-#modal a:hover {
-  background: linear-gradient(to right, var(--cor4), var(--cor5));
-  transform: scale(1.05);
+#modal .modal-header a:hover {
+  background: linear-gradient(to right, var(--cor5), var(--cor6));
 }
 
-#modal nav button {
-  padding: 10px;
+#modal .modal-header nav button {
+  padding: 8px;
 
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
 
-  color: var(--cor7);
+  color: var(--cor8);
   font-weight: 500;
   cursor: pointer;
 
@@ -404,17 +413,55 @@
 }
 
 #modal nav button:hover {
-  background: linear-gradient(to right, var(--cor5), var(--cor4));
-  transform: translateY(-2px);
+  background: linear-gradient(to right, var(--cor6), var(--cor5));
 }
 
-body footer {
+#modal main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  height: 40%;
+  padding: 24px;
+}
+
+#modal .modal-infos {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  height: 100%;
+}
+
+#modal .modal-infos img {
+  height: 100%;
+
+  border-radius: 4px;
+}
+
+#modal .modal-infos div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+#modal .modal-infos div p {
+  color: var(--fontColor);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+#modal .modal-infos div span {
+  color: var(--fontColor1);
+}
+
+footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
 
-  padding: 30px;
+  padding: 32px;
 
   background-color: #121212;
 

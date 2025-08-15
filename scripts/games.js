@@ -29,9 +29,11 @@ export const games = [
     link: "https://rafaelcostasilva1501.github.io/Piano",
   },
 
+  /*
   {
     access: "space-invaders",
     name: "Space Invaders",
     link: "#",
   },
+  */
 ];
