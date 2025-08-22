@@ -1,11 +1,12 @@
 export const games = [
-  {
+  /*{
     access: "clicker",
     name: "Collect Clicker",
     link: "#",
     description: "",
     release: "Em desenvolvimento",
   },
+  */
 
   {
     access: "snake-game",
