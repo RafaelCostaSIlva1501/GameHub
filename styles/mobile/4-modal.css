@@ -1,0 +1,236 @@
+#modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  display: none;
+  flex-direction: column;
+
+  width: 80%;
+  max-width: 640px;
+  height: 95%;
+  max-height: 758px;
+
+  border-radius: 12px;
+  overflow: hidden;
+
+  background-color: #1e1e2f;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+
+  color: var(--cor8);
+
+  z-index: 10;
+}
+
+#modal .modal-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 60%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#modal .modal-header .close-modal-button {
+  align-self: flex-end;
+
+  margin: 24px;
+  margin-left: auto;
+  padding: 4px;
+
+  background-color: #0000001a;
+  border-radius: 50%;
+
+  transition: all 0.3s;
+}
+
+#modal .modal-header .close-modal-button:hover {
+  background-color: #ffffff1a;
+}
+
+#modal .modal-header nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 16px 24px;
+
+  background-color: #0000004b;
+  backdrop-filter: blur(2px);
+}
+
+#modal .modal-header a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: fit-content;
+  padding: 8px 16px;
+
+  background: linear-gradient(to right, var(--cor6), var(--cor5));
+  box-shadow: 0 4px 12px #0000004d;
+  border-radius: 4px;
+
+  color: var(--cor8);
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+#modal .modal-header a:hover {
+  background: linear-gradient(to right, var(--cor5), var(--cor6));
+}
+
+#modal .modal-header nav button {
+  padding: 8px;
+
+  border: none;
+  border-radius: 4px;
+
+  color: var(--cor8);
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+#modal main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  height: 40%;
+
+  overflow: auto;
+}
+
+#modal .modal-infos {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+
+  height: 100%;
+  padding: 24px;
+}
+
+#modal .modal-infos img {
+  height: 100%;
+
+  border-radius: 4px;
+}
+
+#modal .modal-infos div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+#modal .modal-infos div p {
+  color: var(--fontColor);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+#modal .modal-infos div a {
+  color: var(--fontColor1);
+  text-decoration: underline;
+}
+
+#modal .modal-infos div a:hover {
+  color: var(--fontColor);
+}
+
+#modal .modal-infos div span {
+  color: var(--fontColor1);
+}
+
+#modal .modal-updates {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+
+  overflow-y: auto;
+
+  background: linear-gradient(to right, var(--cor4), var(--cor6));
+}
+
+#modal .modal-updates img {
+  width: 24px;
+}
+
+#modal .modal-updates > div {
+  padding: 24px;
+
+  background: #00000091;
+  border-radius: 8px;
+}
+
+#modal .modal-updates > div > div {
+  margin-bottom: 16px;
+
+  color: var(--cor8);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#modal .modal-updates > div > div img {
+  width: 24px;
+}
+
+#modal .modal-updates h3 {
+  color: var(--cor8);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Lista de mudanças */
+#modal .modal-updates ul {
+  margin-left: 12px;
+  padding: 0 12px;
+
+  border-left: 1px solid var(--cor6);
+
+  list-style: none;
+}
+
+#modal .modal-updates li {
+  margin: 12px 0;
+
+  color: #f1f1f1;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Scroll estilizado */
+#modal .modal-updates::-webkit-scrollbar {
+  width: 8px;
+}
+
+#modal .modal-updates::-webkit-scrollbar-thumb {
+  background: var(--cor5);
+  border-color: var(--cor6);
+  border-radius: 4px;
+}
+
+#modal .modal-updates::-webkit-scrollbar-track {
+  background: var(--cor6);
+}
+
+#modal .modal-achievements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+}

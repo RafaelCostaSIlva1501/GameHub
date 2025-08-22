@@ -105,25 +105,4 @@
     display: flex;
     width: 80%;
   }
-
-  #games {
-    display: flex;
-    gap: 48px;
-
-    padding: 48px 64px;
-  }
-
-  #about {
-    display: flex;
-
-    padding: 48px;
-  }
-
-  #about article {
-    padding: 48px;
-  }
-
-  #about .about-text p {
-    font-size: 18px;
-  }
 }

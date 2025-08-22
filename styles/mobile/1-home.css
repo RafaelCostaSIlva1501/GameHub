@@ -1,0 +1,176 @@
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+
+  min-height: 100vh;
+  padding: 24px;
+
+  color: var(--cor8);
+
+  background-image: url(../../img/background.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+#home header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+
+  padding: 0px 24px;
+
+  background: #0000008a;
+
+  z-index: 100;
+
+  animation: expandHeader 0.2s ease-out forwards;
+}
+
+@keyframes expandHeader {
+  from {
+    height: 0;
+    padding: 0px 24px;
+  }
+  to {
+    height: fit-content;
+    padding: 24px 24px;
+  }
+}
+
+#home .header-logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+
+  font-weight: 600;
+}
+
+#home .header-logo img {
+  width: 32px;
+}
+
+#home .header-logo p {
+  color: var(--cor8);
+}
+
+#home .header-logo span {
+  color: var(--cor6);
+}
+
+#home .menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  width: 0;
+  height: 100%;
+  padding: 24px 0px;
+
+  background-color: var(--cor2);
+
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  z-index: 100;
+}
+
+#home .menu button {
+  margin-left: auto;
+
+  color: var(--cor8);
+}
+
+#home .menu a {
+  width: min-content;
+  padding: 4px 8px;
+
+  border-radius: 4px;
+
+  color: var(--cor8);
+  font-size: 18px;
+
+  transition: all 0.3s;
+}
+
+#home .menu a:hover {
+  background-color: var(--cor8);
+  color: var(--cor2);
+}
+
+#home .header-buttons {
+  display: flex;
+  justify-content: end;
+  flex: 1;
+  gap: 4px;
+}
+
+#home .header-buttons button {
+  transition: all 0.3s;
+}
+
+#home .header-buttons button:hover {
+  transform: scale(1.05);
+}
+
+#home section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+#home .home-img img {
+  display: block;
+  width: 384px;
+  margin: 0 auto;
+}
+
+#home .home-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#home .home-text h1 {
+  font-size: 2rem;
+}
+
+#home .home-text p {
+  color: var(--cor7);
+  line-height: 24px;
+}
+
+#home .home-text a {
+  width: fit-content;
+  padding: 8px;
+
+  background-color: var(--cor6);
+  border-radius: 4px;
+
+  color: var(--cor8);
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+#home .home-text a:hover {
+  transform: scale(1.05);
+}

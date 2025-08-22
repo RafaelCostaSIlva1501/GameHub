@@ -6,8 +6,16 @@
     <title>GameHub | Dev Rafael da Costa Silva</title>
 
     <link rel="stylesheet" href="styles/presets.css" />
-    <link rel="stylesheet" href="styles/mobile.css" />
-    <link rel="stylesheet" href="styles/desktop.css" />
+
+    <link rel="stylesheet" href="styles/mobile/1-home.css" />
+    <link rel="stylesheet" href="styles/mobile/2-games.css" />
+    <link rel="stylesheet" href="styles/mobile/3-about.css" />
+    <link rel="stylesheet" href="styles/mobile/4-modal.css" />
+    <link rel="stylesheet" href="styles/mobile/5-footer.css" />
+
+    <link rel="stylesheet" href="styles/desktop/1-home.css" />
+    <link rel="stylesheet" href="styles/desktop/2-games.css" />
+    <link rel="stylesheet" href="styles/desktop/3-about.css" />
   </head>
   <body>
     <main id="home">
@@ -97,7 +105,7 @@
     <section id="about">
       <article>
         <div class="about-title">
-          <img src="img/joystick.png" alt="" />
+          <img src="img/joystick.png" alt="Joystick Icon" />
           <h2>SOBRE</h2>
         </div>
 
@@ -206,24 +214,25 @@
 
       <main>
         <section class="modal-section modal-infos">
-          <img src="img/portrait/snake-game.png" alt="" />
+          <img id="info-img" />
 
           <div>
-            <p>
-              O clássico que nunca sai de moda! Controle uma cobrinha faminta e
-              desafie seus reflexos enquanto coleta alimentos para crescer cada
-              vez mais.
-            </p>
+            <p id="info-description"></p>
 
-
-            
-            <p>Data de Lançamento: <span>27 de Set 2024</span></p>
+            <div>
+              <p>Data de Lançamento: <span id="info-release"></span></p>
+              <p>Código: <a target="_blank" id="info-github">Github</a></p>
+            </div>
           </div>
         </section>
 
-        <section class="modal-section" style="display: none">2</section>
+        <section class="modal-section modal-updates" style="display: none">
+          <h2>Registro de atualizações</h2>
+        </section>
 
-        <section class="modal-section" style="display: none">3</section>
+        <section class="modal-section modal-achievements" style="display: none">
+          <h3>Em desenvolvimento</h3>
+        </section>
       </main>
     </section>
 

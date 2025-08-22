@@ -13,4 +13,11 @@ export const DOM = {
   btnModalPlay: document.querySelector(".modal-play-button"),
   modalSection: document.querySelectorAll(".modal-section"),
   btnModalSection: document.querySelectorAll(".modal-section-button"),
+
+  infoImg: document.getElementById("info-img"),
+  infoDescription: document.getElementById("info-description"),
+  infoRelease: document.getElementById("info-release"),
+  infoGithub: document.getElementById("info-github"),
+
+  modalUpdates: document.querySelector(".modal-updates"),
 };

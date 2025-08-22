@@ -1,80 +1,161 @@
+// Importa os módulos necessários
 import { DOM } from "./DOM.js";
 import { games } from "./games.js";
 
-let menuState = false;
+/* ===== Controle do Menu Lateral ===== */
+let isMenuOpen = false;
 
-DOM.btnMenu.forEach((e) => {
-  e.addEventListener("click", () => {
-    menuState = !menuState;
+const toggleMenu = () => {
+  isMenuOpen = !isMenuOpen;
 
-    DOM.menu.style.width = menuState ? "220px" : "0px";
-    DOM.menu.style.padding = menuState ? "20px 20px" : " 20px 0px";
-    DOM.menu.style.borderLeft = menuState ? "1px solid var(--cor3)" : "none";
-  });
-});
+  DOM.menu.style.width = isMenuOpen ? "220px" : "0";
+  DOM.menu.style.padding = isMenuOpen ? "20px" : "20px 0";
+  DOM.menu.style.borderLeft = isMenuOpen ? "1px solid var(--cor3)" : "none";
+};
 
+DOM.btnMenu.forEach((btn) => btn.addEventListener("click", toggleMenu));
+
+/* ===== Fixar Header no Scroll ===== */
 let lastScrollY = window.scrollY;
 
-window.addEventListener("scroll", () => {
+const handleScroll = () => {
   const currentScrollY = window.scrollY;
 
   if (currentScrollY > lastScrollY) {
-    // Scroll para baixo
     DOM.header.classList.add("header-fixed");
   } else {
-    // Scroll para cima
     DOM.header.classList.remove("header-fixed");
   }
 
   lastScrollY = currentScrollY;
-
-  console.log("Foi!");
-});
-
-const createElement = (tag) => {
-  const element = document.createElement(tag);
-  return element;
 };
 
-games.forEach((e, i) => {
-  const article = createElement("article");
+window.addEventListener("scroll", handleScroll);
 
-  article.style.backgroundImage = `linear-gradient(to bottom, #032ca6d2, transparent, #785ed8bb),
-    url(./img/portrait/${e.access}.png)`;
+/* ===== Utilitários ===== */
+const createElement = (tag) => document.createElement(tag);
 
-  article.addEventListener("click", () => {
-    DOM.modal.style.display = "flex";
-    contentModal(i);
-    DOM.header.classList.remove("header-fixed");
-    document.body.style.overflow = "hidden";
+/* ===== Renderização dos Jogos =====*/
+const renderGames = () => {
+  games.forEach((game, index) => {
+    const article = createElement("article");
+    article.style.backgroundImage = `
+      linear-gradient(to bottom, #032ca6d2, transparent, #785ed8bb),
+      url(./img/portrait/${game.access}.png)
+    `;
+
+    article.addEventListener("click", () => openModal(index));
+
+    const span = createElement("span");
+    span.innerText = "Jogue";
+
+    article.appendChild(span);
+    DOM.containerGames.appendChild(article);
   });
+};
 
-  const span = createElement("span");
-  span.innerText = "Jogue";
+/* ===== Modal ===== */
+const openModal = (index) => {
+  DOM.modal.style.display = "flex";
+  renderModalInfos(index);
+  renderModalUpdate(index);
+  DOM.header.classList.remove("header-fixed");
+  document.body.style.overflow = "hidden";
+};
 
-  DOM.containerGames.appendChild(article);
-  article.appendChild(span);
-});
-
-DOM.btnCloseModal.addEventListener("click", () => {
+const closeModal = () => {
   DOM.modal.style.display = "none";
   document.body.style.overflow = "";
-});
-
-const contentModal = (path) => {
-  DOM.modalHeader.style.backgroundImage = `url('./img/banner/${games[path].access}.jpg')`;
-
-  DOM.btnModalPlay.href = games[path].link;
-
-  DOM;
 };
 
-DOM.btnModalSection.forEach((button, i) => {
-  button.addEventListener("click", () => {
-    DOM.modalSection.forEach((section) => {
-      section.style.display = "none";
-    });
+const renderModalInfos = (index) => {
+  const game = games[index];
 
-    DOM.modalSection[i].style.display = "flex";
+  if (DOM.modalHeader) {
+    DOM.modalHeader.style.backgroundImage = `url('./img/banner/${game.access}.jpg')`;
+  }
+  if (DOM.btnModalPlay) {
+    DOM.btnModalPlay.href = game.link;
+  }
+  if (DOM.infoImg) {
+    DOM.infoImg.src = `./img/portrait/${game.access}.png`;
+  }
+  if (DOM.infoDescription) {
+    DOM.infoDescription.textContent = game.description;
+  }
+  if (DOM.infoRelease) {
+    DOM.infoRelease.textContent = game.release;
+  }
+  if (DOM.infoGithub) {
+    DOM.infoGithub.href = game.github;
+  }
+};
+
+const renderModalUpdate = (index) => {
+  DOM.modalUpdates.innerHTML = "";
+
+  const updates = games[index].update;
+  if (!updates) return;
+
+  updates.forEach((update) => {
+    const card = document.createElement("div");
+
+    const date = document.createElement("div");
+
+    date.innerHTML = `<img src="img/joystick.png" alt="Joystick Icon" /> ${update.date}`;
+    card.appendChild(date);
+
+    if (update.updates) {
+      update.updates.forEach((section) => {
+        const block = document.createElement("div");
+
+        const title = document.createElement("h3");
+        title.textContent = section.title;
+        block.appendChild(title);
+
+        const list = document.createElement("ul");
+        section.items.forEach((item) => {
+          const li = document.createElement("li");
+          li.innerHTML = `&#9679  ${item}`;
+          list.appendChild(li);
+        });
+        block.appendChild(list);
+
+        card.appendChild(block);
+      });
+    }
+
+    DOM.modalUpdates.appendChild(card);
   });
-});
+};
+
+DOM.btnCloseModal.addEventListener("click", closeModal);
+
+/* ===== Navegação dentro do Modal ===== */
+
+DOM.btnModalSection[0].style.backgroundImage = `linear-gradient(to right, var(--cor6), var(--cor5))`;
+
+const handleModalSection = () => {
+  DOM.btnModalSection.forEach((button, i) => {
+    button.addEventListener("click", () => {
+      DOM.btnModalSection.forEach((e) => {
+        e.style.background = "none"
+      });
+
+      DOM.modalSection.forEach((section) => {
+        section.style.display = "none";
+        button.style.backgroundImage = `linear-gradient(to right, var(--cor6), var(--cor5))`;
+      });
+
+      DOM.modalSection[i].style.display = "flex";
+    });
+  });
+};
+
+/* ===== Inicialização ===== */
+const init = () => {
+  renderGames();
+  handleModalSection();
+};
+
+init();

@@ -15,7 +15,7 @@
   --cor7: #dacce9;
   --cor8: #fbf5ff;
   --fontColor: #a0a7c0;
-  --fontColor1: #a0a7c0;
+  --fontColor1: #797f92;
 }
 
 /*
@@ -81,6 +81,16 @@ svg {
   display: flex;
 
   width: fit-content;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }
 
 body {
