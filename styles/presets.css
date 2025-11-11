@@ -18,26 +18,7 @@
   --fontColor1: #797f92;
 }
 
-/*
-  Escala para padding, margin e gap e pode usar o border radius também
 
-  4px
-  8px
-  12px
-  16px
-  24px
-  32px
-  48px
-  64px
-  96px
-  128px
-  192px
-  256px
-  384px
-  512px
-  640px
-  768px
-*/
 
 /* Scrollbar para navegadores WebKit (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
